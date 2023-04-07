@@ -4,16 +4,15 @@ const server = require('../src/server');
 const supertest = require('supertest');
 const request = supertest(server.app);
 
+// beforeAll( async () => {
+//   await db1.sequelize.sync();
+//   await db2.sequelize.sync();
+// });
 
-beforeAll( async () => {
-  await db1.sequelize.sync();
-  await db2.sequelize.sync();
-});
-
-afterAll( async () => {
-  await db1.sequelize.drop();
-  await db2.sequelize.drop();
-});
+// afterAll( async () => {
+//   await db1.sequelize.drop();
+//   await db2.sequelize.drop();
+// });
 
 describe('Test express server for pandas and octopuses'), () => {
 

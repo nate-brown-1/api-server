@@ -10,7 +10,7 @@ router.post('/', validator, createOctopus);
 router.put('/', updateOctopus);
 router.delete('/', deleteOctopus);
 
-const data = { data };
+// const data = { data };
 
 async function readOctopus(request, response, next) {
   let data = await Octopus.findAll();

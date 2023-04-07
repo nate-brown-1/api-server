@@ -10,7 +10,7 @@ router.post('/', validator, createPanda);
 router.put('/', updatePanda);
 router.delete('/', deletePanda);
 
-const data = { data };
+// const data = { data };
 
 async function readPanda(request, response, next) {
   let data = await Panda.findAll();
