@@ -6,7 +6,9 @@ This is an Express server written in Node.js
 
 ## Release Notes
 
-05 Apr 2023 | 0.1.0 | First build
+05 Apr 2023 | 1.0.0 | First build
+
+15 Apr 2023 | 1.1.0 | Working build: models, collection, DB, routes
 
 ## Deployment
 

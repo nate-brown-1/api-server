@@ -20,14 +20,12 @@ app.use(validator);
 const notFoundErrorHandler = require('./error-handlers/404');
 const serverErrorHandler = require('./error-handlers/500');
 
-// router modules
+app.use(express.json());
+app.use(express.urlencoded( { extended: true } ));
 
-// const router = require('./router');
-
-const octopusRouter = require('./routes/octopus.js');
-app.use('/', octopusRouter);
-const pandaRouter = require('./routes/panda.js');
-app.use('/', pandaRouter);
+// router
+const router = require('./routes/router.js');
+app.use(router);
 
 // error 404 for bad requests
 app.use('*', notFoundErrorHandler);

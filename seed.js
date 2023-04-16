@@ -9,9 +9,9 @@ async function seed() {
   await sequelize.sync().then(async () => {
 
     let seedOctopus = await Octopus.create({
-      name: 'Seed',
+      name: 'Jack',
       likes_clams: true,
-      number_of_arms: 7
+      number_of_arms: 8
     });
 
     let seedPanda = await Panda.create({

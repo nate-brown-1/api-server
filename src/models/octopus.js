@@ -1,29 +1,9 @@
-require('dotenv').config();
-const { Sequelize, DataTypes } = require('sequelize');
-// const { DataTypes } = require('sequelize');
-const SQL_URL = process.env.SQL_URL || 'sqlite:memory:';
-// const sequelize = new Sequelize(SQL_URL);
+'use strict';
 
-const sequelize = require('./index');
-
-const Octopus = sequelize.define('Octopus', {
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  likes_clams: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false
-  },
-  number_of_arms: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  }
+const octopusModel = (sequelize, DataTypes) => sequelize.define('octopus', {
+  name: { type: DataTypes.STRING, required: true },
+  likes_clams: { type: DataTypes.BOOLEAN, required: true },
+  number_of_arms: { type : DataTypes.INTEGER }
 });
 
-// module.exports = {
-//   sequelize,
-//   Octopus,
-// };
-
-module.exports = Octopus;
+module.exports = octopusModel;

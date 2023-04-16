@@ -1,32 +1,9 @@
 'use strict';
 
-
-// require('dotenv').config();
-const { Sequelize, DataTypes } = require('sequelize');
-// const { DataTypes } = require('sequelize');
-const SQL_URL = process.env.SQL_URL || 'sqlite:memory:';
-// const sequelize = new Sequelize(SQL_URL);
-
-const sequelize = require('./index');
-
-const Panda = sequelize.define('Panda', {
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  age: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  birthday: {
-    type: DataTypes.DATE,
-    allowNull: false
-  }
+const pandaModel = (sequelize, DataTypes) => sequelize.define('panda', {
+  name: { type: DataTypes.STRING, required: true },
+  age: { type: DataTypes.INTEGER, required: true },
+  birthday: { type: DataTypes.STRING, required: true },
 });
 
-// module.exports = {
-//   sequelize,
-//   Panda,
-// };
-
-module.exports = Panda;
+module.exports = pandaModel;
