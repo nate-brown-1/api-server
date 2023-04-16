@@ -20,12 +20,14 @@ app.use(validator);
 const notFoundErrorHandler = require('./error-handlers/404');
 const serverErrorHandler = require('./error-handlers/500');
 
-app.use(express.json());
-app.use(express.urlencoded( { extended: true } ));
 
 // router
 const router = require('./routes/router.js');
 app.use(router);
+
+app.use(express.json());
+app.use(express.urlencoded( { extended: true } ));
+
 
 // error 404 for bad requests
 app.use('*', notFoundErrorHandler);
