@@ -1,6 +1,6 @@
 'use strict';
 
-const logger = require('./validator');
+const validator = require('./validator');
 
 describe('Test validator middleware', () => {
   test('Should test if request includes name', () => {
@@ -12,7 +12,7 @@ describe('Test validator middleware', () => {
     const response = {};
     const next = jest.fn();
 
-    logger(request, response, next);
+    validator(request, response, next);
     expect(request.body.name).toEqual('Aga');
   });
 });
