@@ -21,13 +21,16 @@ const notFoundErrorHandler = require('./error-handlers/404');
 const serverErrorHandler = require('./error-handlers/500');
 
 // router modules
-const octopusRoute = require('./routes/octopus');
-app.use('/octopus', octopusRoute);
-const pandaRoute = require('./routes/panda');
-app.use('/panda', pandaRoute);
+
+// const router = require('./router');
+
+const octopusRouter = require('./routes/octopus.js');
+app.use('/', octopusRouter);
+const pandaRouter = require('./routes/panda.js');
+app.use('/', pandaRouter);
 
 // error 404 for bad requests
-app.use('*', notFoundErrorHandler());
+app.use('*', notFoundErrorHandler);
 
 // last chance, error 500
 app.use(serverErrorHandler);

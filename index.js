@@ -5,6 +5,6 @@ require('dotenv').config();
 // get envs here to prevent Render deployment errors
 const port = process.env.PORT;
 
-const app = require('./src/server');
+const server = require('./src/server');
 
-app.start(port);
+server.start(port);
