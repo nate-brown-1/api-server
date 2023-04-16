@@ -37,6 +37,10 @@ You will add a link to the PR that you merged in your README for grading purpose
 Phase 2 Requirements
 Build a REST API using Express, by creating a proper series of endpoints that perform CRUD operations on a Postgres SQL Database, using the REST standard.
 
+#### UML Whiteboard
+
+![UML Whiteboard Image](./img/lab3-whiteboard.png)
+
 #### SQL Models
 
 Create 2 SQL data models using the Sequelize library, make sure you export those model instances.
@@ -132,9 +136,13 @@ In your routers, require() the correct data model and instantiate a new instance
 
 #### Testing Requirements
 
+DONE
+
 - Assert the following
   - 404 on a bad route
   - 404 on a bad method
+
+DONE
 
 - The correct status codes and returned data for each REST route
   - Create a record using POST
