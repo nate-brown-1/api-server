@@ -7,4 +7,8 @@ const port = process.env.PORT;
 
 const server = require('./src/server');
 
-server.start(port);
+const { sequelize } = require('./src/models/index.js');
+
+sequelize.sync().then(() => {
+  server.start(port);
+});
