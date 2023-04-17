@@ -7,11 +7,17 @@ const octopusModel = require('./octopus.js');
 const pandaModel = require('./panda.js');
 const Collection = require('./collection.js');
 
-const SQL_URL = process.env.SQL_URL;
+const SQL_URL = process.env.SQL_URL || 'sqlite:memory:' ;
 
 const sequelize = new Sequelize(SQL_URL);
 const octopus = octopusModel(sequelize, DataTypes);
 const panda = pandaModel(sequelize, DataTypes);
+
+
+panda.hasOne(octopus);
+
+octopus.belongsTo(panda);
+
 
 
 module.exports = {
