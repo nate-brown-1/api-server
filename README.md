@@ -10,6 +10,8 @@ This is an Express server written in Node.js
 
 15 Apr 2023 | 1.1.0 | Working build: models, collection, DB, routes
 
+16 Apr 2023 | 1.2.0 | Added model associations : One TO One relationship: panda has foreign key "pandaId", octopus associated with panda by Id
+
 ## Deployment
 
 Deployed to Render [https://api-server-x4pm.onrender.com]
@@ -47,6 +49,22 @@ Create 2 SQL data models using the Sequelize library, make sure you export those
 Make sure your Models are configured with your SQL dialect and can properly connect to your database.
 Your models should have appropriate field names declared with specific sequelize DataTypes.
 For the data models, you are free to choose your own data types and describe their fields … For Example: person, animal, car, instrument, game
+
+#### Model Associations
+
+- Model Association : One to One relationship
+- Each panda has one octopus
+
+Add an association between your models. Utilize the Sequelize docs if helpful.
+One-To-One association:
+GET on the hasOne side should include the entire entity it has.
+GET on the belongsTo side should include a property with a link to the entity it belongs to.
+One-To-Many association:
+GET on the hasMany side should include a property with the URL to access the list of items it has.
+Hint: use a nested route on the parent collection, or a query parameter with the parent ID.
+GET on the belongsTo side should include a property with a link to the entity it belongs to.
+Many-To-Many association:
+GET will involve two belongsToMany associations both of which include a property with a link to the entity it belongs to through a 3rd join table.
 
 #### Routes
 

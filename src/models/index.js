@@ -10,9 +10,12 @@ const Collection = require('./collection.js');
 const SQL_URL = process.env.SQL_URL || 'sqlite:memory:';
 
 const sequelize = new Sequelize(SQL_URL);
-const octopus = octopusModel(sequelize, DataTypes);
-const panda = pandaModel(sequelize, DataTypes);
 
+const panda = pandaModel(sequelize, DataTypes);
+const octopus = octopusModel(sequelize, DataTypes);
+
+panda.hasOne(octopus, { foreignKey: { name: 'pandaId' } });
+octopus.belongsTo(panda);
 
 module.exports = {
   sequelize: sequelize,
