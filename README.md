@@ -10,7 +10,7 @@ This is an Express server written in Node.js
 
 15 Apr 2023 | 1.1.0 | Working build: models, collection, DB, routes
 
-16 Apr 2023 | 1.2.0 | Added model associations : One TO One relationship
+16 Apr 2023 | 1.2.0 | Added model associations : One TO One relationship: panda has foreign key "pandaId", octopus associated with panda by Id
 
 ## Deployment
 
@@ -51,6 +51,9 @@ Your models should have appropriate field names declared with specific sequelize
 For the data models, you are free to choose your own data types and describe their fields … For Example: person, animal, car, instrument, game
 
 #### Model Associations
+
+- Model Association : One to One relationship
+- Each panda has one octopus
 
 Add an association between your models. Utilize the Sequelize docs if helpful.
 One-To-One association:
